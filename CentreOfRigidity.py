@@ -707,9 +707,9 @@ print('--------------------------------------------------------\n')
 
 
 
-model_loc = r"C:\Users\kotab\Documents\Seismic\CR script\Tower 52.sdb"
-SaveLoc = r"C:\Users\kotab\Documents\Seismic\CR script"
-CRElevs = [18, 39]
+model_loc = r"C:\Users\kotab\OneDrive - University of Toronto\Seismic\2020 Design SAP2000 models\Tower 2\Triple rectangle.sdb"
+SaveLoc = r"C:\Users\kotab\OneDrive - University of Toronto\Seismic\2020 Design SAP2000 models\Tower 2"
+CRElevs = [6, 9, 12, 15, 18, 21, 27, 33, 39, 45, 51, 57, 60]
 
 
 
@@ -740,6 +740,7 @@ WbResults = openpyxl.Workbook()
 WbResults.save(Filepath)
 
 AllCRs.append(get_CR(SapModel, CRElevs))
+ret = SapModel.File.Save(model_loc)
 
 write_to_excel(WbResults, Filepath, AllCRs, CRElevs)
 
